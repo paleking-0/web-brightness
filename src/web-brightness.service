@@ -1,0 +1,15 @@
+[Unit]
+Description=Webcam controlled brightness
+
+[Service]
+# Python code path
+ExecStart=/home/simulated_repulsion/CodeProjects/web-brightness/.venv/bin/python /home/simulated_repulsion/CodeProjects/web-brightness/src/main.py
+
+# Set STDERR and STDOUT to be not buffered
+Environment=PYTHONUNBUFFERED=1
+
+Restart=on-failure
+
+[Install]
+# Start service after boot
+WantedBy=default.target
